@@ -14,7 +14,7 @@ ROOT = uridir(import.meta)
 cd ROOT
 
 gen = (i)=>
-  await $"./clone.sh #{i}"
+  await $"#{ROOT}/clone.sh #{i}"
   return
 
 do =>
