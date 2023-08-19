@@ -54,7 +54,7 @@ fn _q(q: &str, input: TokenStream) -> TokenStream {
       let up = var.to_uppercase();
 
       macro_rules.push_str(&format!(
-        "pub static ref SQL_{up}: xxpg::Sql = xxpg::PG.sql(\"{escaped_sql}\");"
+        "pub static ref SQL_{up}: xg::Sql = xg::PG.sql(\"{escaped_sql}\");"
       ));
 
       let mut result = String::new();
@@ -113,7 +113,7 @@ fn _q(q: &str, input: TokenStream) -> TokenStream {
           i += 1;
           let t = &format!("T{i}");
           let v = &format!("_{i}");
-          type_li += &format!("{t}:xxpg::ToSql+Sync");
+          type_li += &format!("{t}:xg::ToSql+Sync");
           arg_li += &format!("{v}:{t}");
           array.push('&');
           array += v;
@@ -121,7 +121,7 @@ fn _q(q: &str, input: TokenStream) -> TokenStream {
         type_li = format!("<{type_li}>");
       }
 
-      let mut body = format!("xxpg::{q}(&*SQL_{up}, &[{array}]).await");
+      let mut body = format!("xg::{q}(&*SQL_{up}, &[{array}]).await");
       if result.is_empty() {
         body = format!("{body}?;\n  Ok(())");
         result = "()".into()
@@ -143,7 +143,7 @@ fn _q(q: &str, input: TokenStream) -> TokenStream {
       }
 
       let fn_var = format!(
-        "\npub async fn {var}{type_li}({arg_li}) -> std::result::Result<{result}, xxpg::Error>"
+        "\npub async fn {var}{type_li}({arg_li}) -> std::result::Result<{result}, xg::Error>"
       );
       let func = &format!("{fn_var} {{\n  {body}\n}}");
       // println!("\n❯ {var} → {result} :\n{sql}");
@@ -151,7 +151,7 @@ fn _q(q: &str, input: TokenStream) -> TokenStream {
     }
   }
   let s = if !f.is_empty() {
-    format!("xxpg::lazy_static!{{\n{macro_rules}\n}}\n{f}")
+    format!("xg::lazy_static!{{\n{macro_rules}\n}}\n{f}")
   } else {
     "".to_string()
   };
