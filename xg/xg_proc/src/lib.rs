@@ -133,6 +133,9 @@ fn _q(q: &str, input: TokenStream) -> TokenStream {
         if q == "Q" {
           result = format!("Vec<{result}>");
           body = format!("Ok({body}?.iter().map(|r|{row_get}).collect())");
+        } else if q == "QE" {
+          result = format!("u64");
+          body = format!("let r = {body}?;\n  Ok(r)");
         } else if q == "Q1" {
           body = format!("let r = {body}?;\n  Ok({row_get})");
         } else if q == "Q01" {
@@ -163,6 +166,12 @@ fn _q(q: &str, input: TokenStream) -> TokenStream {
 #[proc_macro]
 pub fn Q(input: TokenStream) -> TokenStream {
   _q("Q", input)
+}
+
+#[allow(non_snake_case)]
+#[proc_macro]
+pub fn QE(input: TokenStream) -> TokenStream {
+  _q("QE", input)
 }
 
 #[allow(non_snake_case)]
