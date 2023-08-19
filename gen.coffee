@@ -19,7 +19,9 @@ gen = (i)=>
   return
 
 do =>
+  ing = []
   for i from TO
-    await gen i
+    ing.push gen i
+  await Promise.all ing
   await $"git add . && git commit -m. && git push"
   return
