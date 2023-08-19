@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@w5/uridir": "^0.0.1",
+    "zx": "^7.2.3"
+  }
+}
