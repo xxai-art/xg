@@ -1,4 +1,4 @@
-# xg
+# apg
 
 easy use prepared sql for postgresql
 

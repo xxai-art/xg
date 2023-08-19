@@ -1,4 +1,4 @@
-# xg
+# gt
 
 easy use prepared sql for postgresql
 

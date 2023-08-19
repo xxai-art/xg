@@ -1,4 +1,4 @@
-use xg::Q;
+use gt::Q;
 
 Q! {
     li:
