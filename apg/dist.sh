@@ -10,6 +10,6 @@ fi
 
 cargo v patch -y
 cd apg_proc
-cargo publish --registry crates-io || true
+cargo publish --allow-dirty --registry crates-io || true
 cd ..
-cargo publish --registry crates-io || true
+cargo publish --allow-dirty --registry crates-io || true
