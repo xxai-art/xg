@@ -14,8 +14,7 @@ ROOT = uridir(import.meta)
 cd ROOT
 
 gen = (i)=>
-  await $"rm -rf #{i}"
-  await $"cp -R xg #{i}"
+  await $"./clone.sh #{i}"
   return
 
 do =>
@@ -23,5 +22,5 @@ do =>
   for i from TO
     ing.push gen i
   await Promise.all ing
-  await $"git add . && git commit -m. && git push"
+  # await $"git add . && git commit -m. && git push"
   return
