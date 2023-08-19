@@ -14,5 +14,8 @@ cd $1
 
 mv xg_proc $1_proc
 rpl xg_proc $1_proc
-sd xg $1 $(fd --type file --hidden --exclude .git)
+fileli=$(fd --type file --hidden --exclude .git)
+sd PG $(echo $1 | tr '[:lower:]' '[:upper:]') $fileli
+sd xg $1 $fileli
 sd "xxai-art/$1" "xxai-art/xg" Cargo.toml
+./dist.sh
