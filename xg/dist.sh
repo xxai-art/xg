@@ -10,6 +10,6 @@ fi
 
 cargo v patch -y
 cd xg_proc
-cargo publish --registry crates-io
+cargo publish --registry crates-io || true
 cd ..
-cargo publish --registry crates-io
+cargo publish --registry crates-io || true
