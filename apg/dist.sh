@@ -8,7 +8,6 @@ if ! [ -x "$(command -v cargo-v)" ]; then
   cargo install cargo-v
 fi
 
-cargo v patch -y
 cd apg_proc
 cargo publish --allow-dirty --registry crates-io || true
 cd ..
