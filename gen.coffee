@@ -3,17 +3,17 @@
 > zx/globals:
   @w5/uridir
 
-TO = "gt apg xg"
+TO = "gt apg".split ' '
+ROOT = uridir(import.meta)
+cd ROOT
 
-< default main = =>
-  ROOT = uridir(import.meta)
-  cd ROOT
-
-  await $"ls #{ROOT}"
-  await $'pwd'
+gen = (i)=>
+  await $"rm -rf #{i}"
+  await "cp -R xp #{i}"
   return
 
-if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
-  await main()
-  process.exit()
-
+do =>
+  for i from TO
+    await gen i
+  await $"git add . && git commit -m. && git push"
+  return
