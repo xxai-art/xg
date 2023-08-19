@@ -9,10 +9,7 @@ if ! [ -x "$(command -v cargo-v)" ]; then
 fi
 
 cargo v patch -y
-git add -u
-git commit -m. || true
-git push
 cd gt_proc
-cargo publish --registry crates-io
+cargo publish --registry crates-io || true
 cd ..
-cargo publish --registry crates-io
+cargo publish --registry crates-io || true

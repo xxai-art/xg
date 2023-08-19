@@ -18,7 +18,7 @@ gen = (i)=>
   return
 
 do =>
-  await $"xg/dist.sh"
+  # await $"xg/dist.sh"
   await $"rm -rf xg/target;rm -rf xg/xg_proc/target"
   ing = []
   for i from TO
