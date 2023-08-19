@@ -9,7 +9,7 @@ cd ROOT
 
 gen = (i)=>
   await $"rm -rf #{i}"
-  await "cp -R xp #{i}"
+  await $"cp -R xg #{i}"
   return
 
 do =>

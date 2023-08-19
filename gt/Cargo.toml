@@ -1,0 +1,26 @@
+[package]
+name = "xg"
+version = "0.0.1"
+edition = "2021"
+license = "BSL-1.0"
+homepage = "https://github.com/xxai-art/xg"
+repository = "https://github.com/xxai-art/xg.git"
+description = "easy use prepared sql for postgresql"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+axum = "0.6.20"
+paste = "1.0.14"
+tracing = "0.1.37"
+lazy_static = "1.4.0"
+xg_proc = { path = "./xg_proc", version = "0.0.1" }
+pgm = "0.0.6"
+
+[dev-dependencies]
+anyhow = "1.0.75"
+tokio = { version = "1.32.0", features = [
+  "macros",
+  "rt",
+  "rt-multi-thread",
+  "time"
+] }
