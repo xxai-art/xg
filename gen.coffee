@@ -3,6 +3,12 @@
 > zx/globals:
   @w5/uridir
 
+###
+gt GreptimeDB
+apg Analytical Postgresql
+xg xxai.art Postgresql
+###
+
 TO = "gt apg".split ' '
 ROOT = uridir(import.meta)
 cd ROOT
