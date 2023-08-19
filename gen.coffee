@@ -3,6 +3,8 @@
 > zx/globals:
   @w5/uridir
 
+TO = "gt apg xg"
+
 < default main = =>
   ROOT = uridir(import.meta)
   cd ROOT

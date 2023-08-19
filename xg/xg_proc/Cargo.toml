@@ -1,10 +1,10 @@
 [package]
-name = "xxpg_proc"
-version = "0.1.7"
+name = "xg_proc"
+version = "0.0.1"
 edition = "2021"
-license = "SSPL-1.0"
-homepage = "https://github.com/xxai-art/xxpg"
-repository = "https://github.com/xxai-art/xxpg.git"
+license = "BSL-1.0"
+homepage = "https://github.com/xxai-art/xg"
+repository = "https://github.com/xxai-art/xg.git"
 description = "easy use prepared sql for postgresql"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
