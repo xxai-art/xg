@@ -1,6 +1,6 @@
 [package]
 name = "xg"
-version = "0.0.6"
+version = "0.0.9"
 edition = "2021"
 license = "BSL-1.0"
 homepage = "https://github.com/xxai-art/xg"
@@ -13,7 +13,7 @@ axum = "0.6.20"
 paste = "1.0.14"
 tracing = "0.1.37"
 lazy_static = "1.4.0"
-xg_proc = { path = "./xg_proc", version = "0.0.2" }
+xg_proc = { path = "./xg_proc", version = "0.0.8" }
 pgm = "0.0.7"
 
 [dev-dependencies]
