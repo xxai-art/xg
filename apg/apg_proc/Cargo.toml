@@ -1,6 +1,6 @@
 [package]
 name = "apg_proc"
-version = "0.0.8"
+version = "0.0.9"
 edition = "2021"
 license = "BSL-1.0"
 homepage = "https://github.com/xxai-art/apg"
@@ -14,7 +14,7 @@ path = "src/lib.rs"
 
 [dependencies]
 lazy_static = "1.4.0"
-pgw = "0.2.4"
+pgw = "0.2.5"
 proc-macro2 = "1.0.67"
 regex = "1.9.5"
 tokio = { version = "1.32.0", features = ["rt-multi-thread"] }
