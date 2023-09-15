@@ -14,7 +14,7 @@ paste = "1.0.14"
 tracing = "0.1.37"
 lazy_static = "1.4.0"
 gt_proc = { path = "./gt_proc", version = "0.0.8" }
-pgm = "0.0.7"
+pgm = "0.0.8"
 
 [dev-dependencies]
 anyhow = "1.0.75"
